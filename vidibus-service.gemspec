@@ -1,6 +1,6 @@
 # encoding: utf-8
-lib = File.expand_path("../lib/", __FILE__)
-$:.unshift lib unless $:.include?(lib)
+lib = File.expand_path("../lib", __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require "vidibus/service/version"
 
@@ -22,13 +22,13 @@ Gem::Specification.new do |s|
   s.add_dependency "vidibus-secure"
   s.add_dependency "vidibus-uuid"
   s.add_dependency "vidibus-validate_uri"
-  s.add_dependency "httparty", "0.7.8"
+  s.add_dependency "httparty"
   s.add_dependency "json"
 
   s.add_development_dependency "bundler", ">= 1.0.0"
+  s.add_development_dependency "bson_ext"
   s.add_development_dependency "rake"
   s.add_development_dependency "rdoc"
-  s.add_development_dependency "rcov"
   s.add_development_dependency "rspec", "~> 2"
   s.add_development_dependency "rr"
   s.add_development_dependency "webmock"
