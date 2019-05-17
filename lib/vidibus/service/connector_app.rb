@@ -17,7 +17,7 @@ module Vidibus
           return response(:error => "This app must be configured to respond to /connector path.")
         end
         method = @request.request_method.downcase
-        if respond_to?(method)
+        if respond_to?(method, true)
           send(method)
         else
           response(:error => "Invalid request method: #{method}")
